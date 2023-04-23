@@ -18,11 +18,14 @@ import java.util.List;
 
 public class PreguntasActivity extends AppCompatActivity {
 
+    ArrayList<String> resultados = new ArrayList<String>();
+
     TextView nombreJugador;
     TextView txtPregunta;
     Button btnEnviarRespuesta;
 
     RadioButton opcion1,opcion2, opcion3, opcion4;
+
     Integer index = 0;
     List<Pregunta> preguntas = new ArrayList<>(Arrays.asList(
             new Pregunta("¿Cuál es la suma de los primeros 20 números pares?",
@@ -68,21 +71,31 @@ public class PreguntasActivity extends AppCompatActivity {
         opcion2 = findViewById(R.id.opcion2);
         opcion3 = findViewById(R.id.opcion3);
         opcion4 = findViewById(R.id.opcion4);
-
+        Intent recibido = getIntent();
+        String nombre = recibido.getStringExtra("nombre");
+        nombreJugador.setText(nombre);
         setPregunta(preguntas.get(index));
         btnEnviarRespuesta.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                System.out.println(radioButtonSeleccionado());
-                Toast.makeText(getApplicationContext(),radioButtonSeleccionado(), Toast.LENGTH_SHORT).show();
-
-                index++;
-                setPregunta(preguntas.get(index));
+                Boolean checkeado = false;
+                RadioButton seleccionado = null;
+                RadioButton [] botones = new RadioButton[]{opcion1, opcion2, opcion3, opcion4};
+                for( RadioButton btn : botones){
+                    if(btn.isChecked()){
+                        checkeado = true;
+                        seleccionado = btn;
+                    }
+                }
+                if( checkeado ) {
+                    Toast.makeText(getApplicationContext(), radioButtonSeleccionado(), Toast.LENGTH_SHORT).show();
+                    index++;
+                    resultados.add(getRespuesta(seleccionado));
+                    setPregunta(preguntas.get(index));
+                }
             }
         });
-        Intent recibido = getIntent();
-        String nombre = recibido.getStringExtra("nombre");
-        nombreJugador.setText(nombre);
+
     }
 
     public void setPregunta(Pregunta pregunta){
@@ -90,9 +103,12 @@ public class PreguntasActivity extends AppCompatActivity {
         txtPregunta.setText(pregunta.getPregunta());
         cambiarRespuestasPor(pregunta);
     }
-
+    public String getRespuesta(RadioButton btnSeleccionado){
+        return btnSeleccionado.getText().toString();
+    }
     public String radioButtonSeleccionado() {
         RadioButton [] botones = new RadioButton[]{opcion1, opcion2, opcion3, opcion4};
+
         for (int i = 0; i < botones.length; i++) {
             if(botones[i].isChecked()){
                 return "Seleccionaste: " + botones[i].getText();
@@ -105,12 +121,20 @@ public class PreguntasActivity extends AppCompatActivity {
         for (int i = 0; i < botones.length; i++) {
             botones[i].setChecked(false);
         }
+
     }
+
+
     public void cambiarRespuestasPor(Pregunta pregunta) {
         opcion1.setText(pregunta.getRespuestas()[0]);
         opcion2.setText(pregunta.getRespuestas()[1]);
         opcion3.setText(pregunta.getRespuestas()[2]);
         opcion4.setText(pregunta.getRespuestas()[3]);
 
+    }
+
+    public void addRespuesta(String respuesta){
+
+        resultados.add(respuesta);
     }
 }
