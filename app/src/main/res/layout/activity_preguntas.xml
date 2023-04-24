@@ -25,7 +25,6 @@
         android:layout_height="45dp"
         android:layout_marginStart="32dp"
         android:layout_marginTop="232dp"
-        android:text="¿Quien es el presidente de argentina?"
         android:textSize="20sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -34,9 +33,10 @@
         android:id="@+id/nombreJugador"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="28dp"
+        android:layout_marginTop="12dp"
         android:textSize="20sp"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/titulo" />
 
@@ -54,26 +54,22 @@
         <RadioButton
             android:id="@+id/opcion1"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Alberto Fernandez" />
+            android:layout_height="wrap_content" />
 
         <RadioButton
             android:id="@+id/opcion2"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Emmanuel Macron" />
+            android:layout_height="wrap_content" />
 
         <RadioButton
             android:id="@+id/opcion3"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Cristina Kirchner" />
+            android:layout_height="wrap_content" />
 
         <RadioButton
             android:id="@+id/opcion4"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Sergio Massa" />
+            android:layout_height="wrap_content" />
     </RadioGroup>
 
     <Button
@@ -85,5 +81,15 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/txtPuntos"
+        android:layout_width="106dp"
+        android:layout_height="29dp"
+        android:textSize="16sp"
+        app:layout_constraintBottom_toTopOf="@+id/txtPregunta"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/nombreJugador" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

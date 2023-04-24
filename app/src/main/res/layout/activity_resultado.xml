@@ -10,76 +10,100 @@
         android:id="@+id/tituloResultado"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="120dp"
-        android:layout_marginTop="32dp"
-        android:layout_marginBottom="37dp"
+        android:layout_marginStart="116dp"
+        android:layout_marginBottom="136dp"
         android:text="Resultados"
         android:textColor="#F44336"
         android:textSize="34sp"
         app:layout_constraintBottom_toTopOf="@+id/listaResultado"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintStart_toStartOf="parent" />
 
     <ListView
         android:id="@+id/listaResultado"
-        android:layout_width="359dp"
-        android:layout_height="0dp"
+        android:layout_width="360dp"
+        android:layout_height="256dp"
         android:layout_marginStart="1dp"
-        android:layout_marginTop="114dp"
+        android:layout_marginTop="184dp"
         android:layout_marginEnd="1dp"
-        android:layout_marginBottom="124dp"
-        app:layout_constraintBottom_toTopOf="@+id/respuestaCorrecta"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.408"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.103" />
+        app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:id="@+id/tvPregunta"
-        android:layout_width="239dp"
-        android:layout_height="45dp"
-        android:layout_marginBottom="24dp"
-        android:text="¿Cuanto es 19 x 800?"
+        android:layout_width="367dp"
+        android:layout_height="95dp"
+        android:layout_marginTop="12dp"
         android:textColor="#090505"
-        android:textSize="24sp"
-        app:layout_constraintBottom_toTopOf="@+id/respuestaUsuario"
+        android:textSize="20sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/listaResultado" />
-
-    <TextView
-        android:id="@+id/respuestaUsuario"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="33dp"
-        android:layout_marginBottom="221dp"
-        android:text="respuesta usuario"
-        android:textSize="16sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tvPregunta" />
 
     <TextView
         android:id="@+id/respuestaCorrecta"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="1dp"
-        android:layout_marginBottom="186dp"
-        android:text="respuesta correcta"
+        android:layout_width="365dp"
+        android:layout_height="25dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        android:textColor="@color/black"
         android:textSize="16sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="@+id/respuestaUsuario"
-        app:layout_constraintTop_toBottomOf="@+id/listaResultado" />
+        app:layout_constraintBottom_toTopOf="@+id/btnResetearJuego"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvPregunta"
+        app:layout_constraintVertical_bias="0.253" />
+
+    <TextView
+        android:id="@+id/respuestaUsuario"
+        android:layout_width="344dp"
+        android:layout_height="23dp"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="12dp"
+        android:textColor="@android:color/black"
+        android:textSize="16sp"
+        app:layout_constraintBottom_toTopOf="@+id/btnResetearJuego"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/respuestaCorrecta" />
 
     <Button
-        android:id="@+id/btnResetar"
+        android:id="@+id/btnResetearJuego"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="104dp"
+        android:layout_marginBottom="40dp"
         android:hint="Volver a Empezar"
+        android:onClick="volverAEmpezar"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/tvInstruccion"
+        android:layout_width="322dp"
+        android:layout_height="25dp"
+        android:layout_marginStart="46dp"
+        android:layout_marginEnd="46dp"
+        android:layout_marginBottom="423dp"
+        android:text="Para ver el resultado, presiona un item de la lista."
+        app:layout_constraintBottom_toTopOf="@+id/respuestaCorrecta"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.666"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tituloResultado"
+        app:layout_constraintVertical_bias="0.463" />
+
+    <TextView
+        android:id="@+id/textView6"
+        android:layout_width="311dp"
+        android:layout_height="45dp"
+        android:textColor="@color/black"
+        android:textSize="16sp"
+        app:layout_constraintBottom_toTopOf="@+id/listaResultado"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvInstruccion"
+        app:layout_constraintVertical_bias="0.578" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

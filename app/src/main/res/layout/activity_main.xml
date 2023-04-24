@@ -8,20 +8,19 @@
 
     <Button
         android:id="@+id/btnComenzar"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="145dp"
+        android:layout_height="60dp"
         android:hint="Continuar"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.869" />
+        app:layout_constraintVertical_bias="0.898" />
 
     <EditText
         android:id="@+id/edtName"
-        android:layout_width="342dp"
-        android:layout_height="80dp"
+        android:layout_width="376dp"
+        android:layout_height="82dp"
         android:layout_marginBottom="148dp"
         android:ems="10"
         android:hint="Ingresa tu Nombre"
@@ -33,16 +32,29 @@
 
     <TextView
         android:id="@+id/textView4"
-        android:layout_width="331dp"
-        android:layout_height="160dp"
+        android:layout_width="370dp"
+        android:layout_height="65dp"
+        android:layout_marginTop="76dp"
         android:fontFamily="monospace"
-        android:text="Bienvenido a Cerebros En Accion "
+        android:text="Cerebros En Accion "
         android:textColor="#F44336"
         android:textSize="34sp"
-        app:layout_constraintBottom_toTopOf="@+id/edtName"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.487"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="387dp"
+        android:layout_height="330dp"
+        android:layout_marginStart="27dp"
+        android:layout_marginEnd="27dp"
+        android:layout_marginBottom="252dp"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.155" />
+        app:layout_constraintTop_toBottomOf="@+id/textView4"
+        app:srcCompat="@drawable/logo" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

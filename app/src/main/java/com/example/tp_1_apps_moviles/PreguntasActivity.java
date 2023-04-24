@@ -21,12 +21,11 @@ public class PreguntasActivity extends AppCompatActivity {
     ArrayList<String> resultados = new ArrayList<String>();
 
     TextView nombreJugador;
-    TextView txtPregunta;
+    TextView txtPregunta, txtPuntos;
     Button btnEnviarRespuesta;
-
     RadioButton opcion1,opcion2, opcion3, opcion4;
-
     Integer index = 0;
+    Integer puntos = 0;
     List<Pregunta> preguntas = new ArrayList<>(Arrays.asList(
             new Pregunta("¿Cuál es la suma de los primeros 20 números pares?",
                     new String[]{"420", "440", "400", "380"},0),
@@ -66,6 +65,7 @@ public class PreguntasActivity extends AppCompatActivity {
 
         nombreJugador = findViewById(R.id.nombreJugador);
         txtPregunta = findViewById(R.id.txtPregunta);
+        txtPuntos = findViewById(R.id.txtPuntos);
         btnEnviarRespuesta = findViewById(R.id.btnEnviarRespuesta);
         opcion1 = findViewById(R.id.opcion1);
         opcion2 = findViewById(R.id.opcion2);
@@ -73,68 +73,70 @@ public class PreguntasActivity extends AppCompatActivity {
         opcion4 = findViewById(R.id.opcion4);
         Intent recibido = getIntent();
         String nombre = recibido.getStringExtra("nombre");
+        txtPuntos.setText("Puntos: " + puntos.toString());
         nombreJugador.setText(nombre);
         setPregunta(preguntas.get(index));
+        cambiarRespuestasPor(preguntas.get(index));
         btnEnviarRespuesta.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Boolean checkeado = false;
-                RadioButton seleccionado = null;
-                RadioButton [] botones = new RadioButton[]{opcion1, opcion2, opcion3, opcion4};
-                for( RadioButton btn : botones){
-                    if(btn.isChecked()){
-                        checkeado = true;
-                        seleccionado = btn;
+
+                    RadioButton[] botones = new RadioButton[]{opcion1, opcion2, opcion3, opcion4};
+                    for (RadioButton btn : botones) {
+                        if (btn.isChecked()) {
+                            resultados.add(getRespuesta());
+                            if(btn.getText().toString().equals(preguntas.get(index).getRespuestas()[preguntas.get(index).getIndiceRespuestaCorrecta()])){
+                                puntos+=5;
+                                txtPuntos.setText("Puntos: " + puntos.toString());
+                            }
+                            if(index == 9){
+                                Intent launchResultado = new Intent(PreguntasActivity.this, ResultadoActivity.class
+                                );
+                                launchResultado.putExtra("respuestas", resultados);
+                                launchResultado.putExtra("puntos", puntos);
+                                startActivity(launchResultado);
+                                return;
+                            }
+                            index++;
+                            cambiarRespuestasPor(preguntas.get(index));
+                            setPregunta(preguntas.get(index));
+                        }
                     }
-                }
-                if( checkeado ) {
-                    Toast.makeText(getApplicationContext(), radioButtonSeleccionado(), Toast.LENGTH_SHORT).show();
-                    index++;
-                    resultados.add(getRespuesta(seleccionado));
-                    setPregunta(preguntas.get(index));
-                }
             }
         });
-
     }
-
     public void setPregunta(Pregunta pregunta){
-        limpiarCheckboxes();
         txtPregunta.setText(pregunta.getPregunta());
-        cambiarRespuestasPor(pregunta);
     }
-    public String getRespuesta(RadioButton btnSeleccionado){
-        return btnSeleccionado.getText().toString();
+    public String getRespuesta(){
+        return radioButtonSeleccionado();
     }
     public String radioButtonSeleccionado() {
         RadioButton [] botones = new RadioButton[]{opcion1, opcion2, opcion3, opcion4};
-
+        String respuestaSeleccionada = "";
         for (int i = 0; i < botones.length; i++) {
             if(botones[i].isChecked()){
-                return "Seleccionaste: " + botones[i].getText();
+                respuestaSeleccionada =  botones[i].getText().toString();
             }
         }
-        return "No seleccionaste";
+        return respuestaSeleccionada;
     }
     public void limpiarCheckboxes(){
         RadioButton [] botones = new RadioButton[]{opcion1, opcion2, opcion3, opcion4};
         for (int i = 0; i < botones.length; i++) {
             botones[i].setChecked(false);
+            botones[i].setEnabled(true);
         }
-
     }
-
-
     public void cambiarRespuestasPor(Pregunta pregunta) {
         opcion1.setText(pregunta.getRespuestas()[0]);
         opcion2.setText(pregunta.getRespuestas()[1]);
         opcion3.setText(pregunta.getRespuestas()[2]);
         opcion4.setText(pregunta.getRespuestas()[3]);
-
     }
 
     public void addRespuesta(String respuesta){
-
         resultados.add(respuesta);
     }
+
 }
