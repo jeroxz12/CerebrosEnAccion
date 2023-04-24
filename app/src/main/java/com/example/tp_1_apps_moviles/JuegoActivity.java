@@ -36,8 +36,8 @@ public class JuegoActivity extends AppCompatActivity {
             public void onClick(View view) {
                 Intent pantallaDePreguntas = new Intent(JuegoActivity.this, PreguntasActivity.class);
                 pantallaDePreguntas.putExtra("nombre", nombre);
+                finish();
                 startActivity(pantallaDePreguntas);
-                JuegoActivity.this.finish();
             }
         });
 

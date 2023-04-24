@@ -29,7 +29,9 @@ public class MainActivity extends AppCompatActivity {
                     String nombre = edtName.getText().toString();
                     Intent launchSecondActivity = new Intent(MainActivity.this, JuegoActivity.class);
                     launchSecondActivity.putExtra("nombre", nombre);
+                    finish();
                     startActivity(launchSecondActivity);
+
                 }
             }
         });

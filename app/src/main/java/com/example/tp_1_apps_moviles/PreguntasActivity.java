@@ -94,6 +94,7 @@ public class PreguntasActivity extends AppCompatActivity {
                                 );
                                 launchResultado.putExtra("respuestas", resultados);
                                 launchResultado.putExtra("puntos", puntos);
+                                finish();
                                 startActivity(launchResultado);
                                 return;
                             }

@@ -69,6 +69,7 @@ public class ResultadoActivity extends AppCompatActivity {
         listaResultado = findViewById(R.id.listaResultado);
         tvPregunta = findViewById(R.id.tvPregunta);
         textView6 = findViewById(R.id.textView6);
+        btnResetearJuego = findViewById(R.id.btnResetearJuego);
         textView6.setText("Puntos conseguidos: " + puntos);
         respuestaCorrecta = findViewById(R.id.respuestaCorrecta);
         respuestaUsuario = findViewById(R.id.respuestaUsuario);
@@ -87,10 +88,16 @@ public class ResultadoActivity extends AppCompatActivity {
                 respuestaUsuario.setText("Tu respuesta: " +respuestas.get(i));
             }
         });
+        btnResetearJuego.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent i = new Intent(ResultadoActivity.this, MainActivity.class);
+                finish();
+                startActivity(i);
+                            }
+        });
     }
-    public void volverAEmpezar(){
 
-    }
 
     public void setResultado() {
 
