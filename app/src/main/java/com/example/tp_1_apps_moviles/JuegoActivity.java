@@ -18,7 +18,7 @@ import java.util.List;
 public class JuegoActivity extends AppCompatActivity {
 
     Button btnComenzarJuego;
-
+    Button btnVolverAtras;
 
     TextView textViewName;
     @Override
@@ -27,6 +27,8 @@ public class JuegoActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_juego);
         btnComenzarJuego = findViewById(R.id.btnComenzarJuego);
+        btnVolverAtras = findViewById(R.id.btnVolver);
+
         textViewName = findViewById(R.id.textViewName);
         Intent recibido = getIntent();
         String nombre = recibido.getStringExtra("nombre");
@@ -38,6 +40,15 @@ public class JuegoActivity extends AppCompatActivity {
                 pantallaDePreguntas.putExtra("nombre", nombre);
                 finish();
                 startActivity(pantallaDePreguntas);
+            }
+        });
+
+        btnVolverAtras.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent i = new Intent(JuegoActivity.this, MainActivity.class);
+                finish();
+                startActivity(i);
             }
         });
 

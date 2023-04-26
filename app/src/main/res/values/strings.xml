@@ -11,5 +11,6 @@
     <string name="resultados_title">Resultados</string>
     <string name="resultados_desc">Para ver el resultado, presiona un item de la lista.</string>
     <string name="btn_volver">Volver a Empezar</string>
+    <string name="btn_back">Volver Atrás</string>
 
 </resources>

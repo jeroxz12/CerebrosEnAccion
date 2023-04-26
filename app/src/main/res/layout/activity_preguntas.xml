@@ -22,10 +22,12 @@
     <TextView
         android:id="@+id/txtPregunta"
         android:layout_width="342dp"
-        android:layout_height="45dp"
+        android:layout_height="0dp"
         android:layout_marginStart="32dp"
         android:layout_marginTop="232dp"
+        android:layout_marginBottom="361dp"
         android:textSize="20sp"
+        app:layout_constraintBottom_toTopOf="@+id/btnDejarDeJugar"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -74,7 +76,7 @@
 
     <Button
         android:id="@+id/btnEnviarRespuesta"
-        android:layout_width="213dp"
+        android:layout_width="230dp"
         android:layout_height="69dp"
         android:layout_marginBottom="108dp"
         android:hint="Enviar Respuesta"
@@ -92,5 +94,16 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/nombreJugador" />
+
+    <Button
+        android:id="@+id/btnDejarDeJugar"
+        android:layout_width="238dp"
+        android:layout_height="64dp"
+        android:layout_marginBottom="30dp"
+        android:text="@string/btn_back"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txtPregunta" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

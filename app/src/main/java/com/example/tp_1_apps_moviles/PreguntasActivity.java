@@ -22,7 +22,7 @@ public class PreguntasActivity extends AppCompatActivity {
 
     TextView nombreJugador;
     TextView txtPregunta, txtPuntos;
-    Button btnEnviarRespuesta;
+    Button btnEnviarRespuesta, btnDejarDeJugar;
     RadioButton opcion1,opcion2, opcion3, opcion4;
     Integer index = 0;
     Integer puntos = 0;
@@ -67,6 +67,7 @@ public class PreguntasActivity extends AppCompatActivity {
         txtPregunta = findViewById(R.id.txtPregunta);
         txtPuntos = findViewById(R.id.txtPuntos);
         btnEnviarRespuesta = findViewById(R.id.btnEnviarRespuesta);
+        btnDejarDeJugar = findViewById(R.id.btnDejarDeJugar);
         opcion1 = findViewById(R.id.opcion1);
         opcion2 = findViewById(R.id.opcion2);
         opcion3 = findViewById(R.id.opcion3);
@@ -106,6 +107,14 @@ public class PreguntasActivity extends AppCompatActivity {
                         }
                     }
 
+            }
+        });
+        btnDejarDeJugar.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent i = new Intent(PreguntasActivity.this,MainActivity.class);
+                finish();
+                startActivity(i);
             }
         });
     }

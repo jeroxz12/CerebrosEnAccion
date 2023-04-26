@@ -71,9 +71,9 @@ public class ResultadoActivity extends AppCompatActivity {
         textView6 = findViewById(R.id.textView6);
         btnResetearJuego = findViewById(R.id.btnResetearJuego);
         if (puntos >= 25) {
-            textView6.setText("Felicidades, pasaste el juego, tus puntos fueron: " + puntos);
+            textView6.setText("Felicidades, pasaste el juego, tus puntos fueron: " + puntos + " de 50");
         } else {
-            textView6.setText("Lo siento, no pasaste el juego, tus puntos fueron: " + puntos);
+            textView6.setText("Lo siento, no pasaste el juego, tus puntos fueron: " + puntos + " de 50");
         }
         respuestaCorrecta = findViewById(R.id.respuestaCorrecta);
         respuestaUsuario = findViewById(R.id.respuestaUsuario);
