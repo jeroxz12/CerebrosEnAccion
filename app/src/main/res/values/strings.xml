@@ -1,3 +1,15 @@
 <resources>
     <string name="app_name">TP_1_Apps_Moviles</string>
+    <string name="app_title">CerebrosEnAccion</string>
+    <string name="regla_juego_1">-Los jugadores no pueden usar ningún tipo de ayuda externa para responder las preguntas, como buscar en internet o preguntar a otras personas. Solo pueden confiar en su propio conocimiento.</string>
+    <string name="regla_juego_2">-Si un jugador no está familiarizado con el tema de la ronda, puede perder puntos o quedar eliminado del juego.</string>
+    <string name="regla_juego_3">-El juego tiene 5 preguntas, debes seleccionar la que consideres correcta, cada pregunta respondidad correctamente suma 5 puntos,  y al finalizar podrás ver tus resultados.</string>
+    <string name="btn_comenzar">Comenzar a Jugar</string>
+    <string name="btn_continuar">Continuar</string>
+    <string name="jugador_title">Jugador:</string>
+    <string name="btn_enviar">Enviar Respuesta</string>
+    <string name="resultados_title">Resultados</string>
+    <string name="resultados_desc">Para ver el resultado, presiona un item de la lista.</string>
+    <string name="btn_volver">Volver a Empezar</string>
+
 </resources>

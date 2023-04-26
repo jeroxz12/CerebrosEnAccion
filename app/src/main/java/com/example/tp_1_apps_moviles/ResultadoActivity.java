@@ -65,12 +65,16 @@ public class ResultadoActivity extends AppCompatActivity {
         setContentView(R.layout.activity_resultado);
         Intent recibido = getIntent();
         respuestas = recibido.getStringArrayListExtra("respuestas");
-        puntos = recibido.getIntExtra("puntos",0);
+        puntos =  recibido.getIntExtra("puntos",0);
         listaResultado = findViewById(R.id.listaResultado);
         tvPregunta = findViewById(R.id.tvPregunta);
         textView6 = findViewById(R.id.textView6);
         btnResetearJuego = findViewById(R.id.btnResetearJuego);
-        textView6.setText("Puntos conseguidos: " + puntos);
+        if (puntos >= 25) {
+            textView6.setText("Felicidades, pasaste el juego, tus puntos fueron: " + puntos);
+        } else {
+            textView6.setText("Lo siento, no pasaste el juego, tus puntos fueron: " + puntos);
+        }
         respuestaCorrecta = findViewById(R.id.respuestaCorrecta);
         respuestaUsuario = findViewById(R.id.respuestaUsuario);
         String [] arrayPreguntas = new String[10];
@@ -99,7 +103,5 @@ public class ResultadoActivity extends AppCompatActivity {
     }
 
 
-    public void setResultado() {
 
-    }
 }

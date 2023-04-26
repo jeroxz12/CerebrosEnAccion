@@ -85,11 +85,11 @@ public class PreguntasActivity extends AppCompatActivity {
                     for (RadioButton btn : botones) {
                         if (btn.isChecked()) {
                             resultados.add(getRespuesta());
-                            if(btn.getText().toString().equals(preguntas.get(index).getRespuestas()[preguntas.get(index).getIndiceRespuestaCorrecta()])){
-                                puntos+=5;
+                            if (btn.getText().toString().equals(preguntas.get(index).getRespuestas()[preguntas.get(index).getIndiceRespuestaCorrecta()])) {
+                                puntos += 5;
                                 txtPuntos.setText("Puntos: " + puntos.toString());
                             }
-                            if(index == 9){
+                            if (index == 9) {
                                 Intent launchResultado = new Intent(PreguntasActivity.this, ResultadoActivity.class
                                 );
                                 launchResultado.putExtra("respuestas", resultados);
@@ -99,10 +99,13 @@ public class PreguntasActivity extends AppCompatActivity {
                                 return;
                             }
                             index++;
+
                             cambiarRespuestasPor(preguntas.get(index));
                             setPregunta(preguntas.get(index));
+
                         }
                     }
+
             }
         });
     }

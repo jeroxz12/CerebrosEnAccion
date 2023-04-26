@@ -11,50 +11,50 @@
         android:layout_width="330dp"
         android:layout_height="57dp"
         android:layout_marginBottom="364dp"
-        android:text="-Si un jugador no está familiarizado con el tema de la ronda, puede perder puntos o quedar eliminado del juego."
+        android:text="@string/regla_juego_2"
         android:textSize="16sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.382"
+        app:layout_constraintHorizontal_bias="0.444"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView"
-        app:layout_constraintVertical_bias="0.909" />
+        app:layout_constraintVertical_bias="0.457" />
 
     <TextView
         android:id="@+id/textView"
         android:layout_width="364dp"
         android:layout_height="60dp"
-        android:layout_marginBottom="436dp"
-        android:text="-Los jugadores no pueden usar ningún tipo de ayuda externa para responder las preguntas, como buscar en internet o preguntar a otras personas. Solo pueden confiar en su propio conocimiento."
+        android:layout_marginBottom="456dp"
+        android:text="@string/regla_juego_1"
         android:textSize="16sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.659"
+        app:layout_constraintHorizontal_bias="0.765"
         app:layout_constraintStart_toStartOf="parent" />
 
     <TextView
         android:id="@+id/textView3"
-        android:layout_width="371dp"
-        android:layout_height="55dp"
-        android:text="-El juego tiene 5 preguntas, debes seleccionar la que consideres correcta, y al finalizar verás tus resultados."
+        android:layout_width="352dp"
+        android:layout_height="81dp"
+        android:text="@string/regla_juego_3"
         android:textSize="16sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.72"
+        app:layout_constraintHorizontal_bias="0.61"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView5"
-        app:layout_constraintVertical_bias="0.041" />
+        app:layout_constraintVertical_bias="0.059" />
 
     <TextView
         android:id="@+id/textViewName"
         android:layout_width="309dp"
         android:layout_height="60dp"
-        android:layout_marginTop="184dp"
-        android:text="CerebrosEnAccion"
+        android:layout_marginTop="144dp"
+        android:text="@string/app_title"
         android:textColor="#F44336"
         android:textSize="34sp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.627"
+        app:layout_constraintHorizontal_bias="0.607"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -62,11 +62,10 @@
         android:id="@+id/btnComenzarJuego"
         android:layout_width="163dp"
         android:layout_height="53dp"
-        android:layout_marginBottom="240dp"
-        android:hint="Comenzar a Jugar"
+        android:layout_marginBottom="204dp"
+        android:text="@string/btn_comenzar"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
